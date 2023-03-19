@@ -23,7 +23,16 @@ return require('packer').startup(function(use)
 	tag = '0.1.0',
 	requires = {{'nvim-lua/plenary.nvim'}}
 	}
-
+  use {
+	'glepnir/dashboard-nvim',
+ 	event = 'VimEnter',
+        config = function()
+    	require('dashboard').setup {
+      -- config
+    	}
+  	end,
+  	requires = {'nvim-tree/nvim-web-devicons'}
+      }
 
   if packer_bootstrap then
       require('packer').sync()
